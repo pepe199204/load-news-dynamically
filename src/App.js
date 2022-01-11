@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Widget from './components/Widget';
+import Banner from './components/Banner';
+import Partner from './components/Partner';
+import Ad from './components/Ad';
+import Footer from './components/Footer';
+
+const styles = {
+  containerWidget: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: 'auto',
+    backgroundColor: '#fff',
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>
+      <Banner></Banner>
+      <Partner></Partner>
+      <div style={styles.containerWidget}>
+        <Widget limit = { 7 }></Widget>
+      </div>
+      <Ad></Ad>
+      <Footer></Footer>
     </div>
   );
-}
+};
 
 export default App;
